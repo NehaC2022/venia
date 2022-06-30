@@ -1,0 +1,17 @@
+.logo {
+    font-size: 30px;
+    line-height: 1em;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-align: left;
+}
+
+.logo-one-text {
+    display: inline-block;
+    margin: 0;
+
+    background: linear-gradient(to right, #1c87c9 50%, #172026 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

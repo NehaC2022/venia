@@ -1,0 +1,38 @@
+.hero-banner-image{
+    width: 100%;
+    padding: 41px 0px;
+    // padding: 21px 0px;
+}
+.header-banner-content{
+    background-color: $color-grey-D4;
+    color: $color-white;
+    text-align: center;
+    padding:90px;
+}
+.header-banner-content h1{
+    font-size: 48px;   
+}
+.bar{
+    width: 102px;
+    height: 8px;
+    background-color: $color-primary-band;
+    border: none;
+    margin-top: 32px;
+}
+.heading2{
+    visibility: hidden;
+}
+@media screen and (max-width:768px)
+{
+    .header-banner-content{
+        padding: 24px 84px;
+    }
+    .hero-banner-image{
+        position: absolute;
+        top: 341px;
+        right: 1px;
+    }
+    .heading2{
+        visibility: visible;
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/venia/static/css/main.f0666bc6.css",
+    "main.js": "/venia/static/js/main.02a275a9.js",
+    "static/js/787.f3f26a24.chunk.js": "/venia/static/js/787.f3f26a24.chunk.js",
+    "static/media/hero-banner.png": "/venia/static/media/hero-banner.3764437ecc51d194eece.png",
+    "static/media/Swatch01@2x.png": "/venia/static/media/Swatch01@2x.30a9f6ab739e8cb18618.png",
+    "static/media/slack.svg": "/venia/static/media/slack.c960e95535cd9b3149ccf0f0830ec002.svg",
+    "index.html": "/venia/index.html",
+    "static/media/share.svg": "/venia/static/media/share.c9452d8d0a01f15f7b30c66f52b97baa.svg",
+    "static/media/trash-2.svg": "/venia/static/media/trash-2.a3e697fde0ae7e80f40a3f3214ef433d.svg",
+    "static/media/instagram.svg": "/venia/static/media/instagram.098205e681981cff2deaa43da7f8afa7.svg",
+    "static/media/feather.svg": "/venia/static/media/feather.b8493c1306b4dd9a5c7a2e14a2095e51.svg",
+    "static/media/shopping-bag.svg": "/venia/static/media/shopping-bag.7865a20d4f73677ab5144fd6411a11f8.svg",
+    "static/media/layers.svg": "/venia/static/media/layers.c7a19f7a66511208890b90729b6a868f.svg",
+    "static/media/user.svg": "/venia/static/media/user.36f9dff636796a3645348ee7f29f2509.svg",
+    "static/media/search.svg": "/venia/static/media/search.d9388588132a09c360a92e9f450b2fa1.svg",
+    "static/media/lock.svg": "/venia/static/media/lock.64439d453537a96d8d81d9817f2dfef8.svg",
+    "static/media/twitter.svg": "/venia/static/media/twitter.3d9f31115be6b897b5d45c0aad4c1c1f.svg",
+    "static/media/heart.svg": "/venia/static/media/heart.a907ab68d10229f05d705226b23d8bf2.svg",
+    "static/media/edit-2.svg": "/venia/static/media/edit-2.d86fb5c57c99ad0d8312adf90283ac77.svg",
+    "static/media/facebook.svg": "/venia/static/media/facebook.b5b54c5572636785078aa70b8bdffe26.svg",
+    "main.f0666bc6.css.map": "/venia/static/css/main.f0666bc6.css.map",
+    "main.02a275a9.js.map": "/venia/static/js/main.02a275a9.js.map",
+    "787.f3f26a24.chunk.js.map": "/venia/static/js/787.f3f26a24.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0666bc6.css",
+    "static/js/main.02a275a9.js"
+  ]
+}

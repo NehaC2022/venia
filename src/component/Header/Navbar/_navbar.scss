@@ -1,0 +1,49 @@
+.nav {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: left;
+
+    ul li {
+        display: inline;
+        padding-right: 2rem;
+
+        a {
+            text-decoration: none;
+            color: $color-grey-D4;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            vertical-align: -webkit-baseline-middle;
+        }
+}
+    img {
+        padding-right: 0.5rem;
+        text-align: center;
+        vertical-align: middle;
+    }
+}
+
+.nav ul li:last-child {
+    padding-right: 0px;
+}
+
+.icon ul:last-child {
+    text-align: right;
+}
+.nav img:last-child {
+    padding-right: 0px;
+}
+
+.bottom-line {
+    border-bottom-color: $color-Grey-L1;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    margin-bottom: 33px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.menu {
+    text-align: center;
+}

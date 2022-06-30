@@ -1,0 +1,19 @@
+@import './libary/_aem-grid';
+@import './libary/_variables.scss';
+@import './libary/cutom-container';
+@import './libary//utility';
+@import '../component/Header/Navbar/navbar';
+@import '../component/Footer/footer';
+@import '../component/Header/Navbar/navbar2';
+@import '../component/Header/Header-Banner/header-banner';
+@import '../component/Product/product';
+@import '../component/Product/filter';
+@import '../component/ShoppingCart/cart';
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+}
