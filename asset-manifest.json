@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/venia/static/css/main.f0666bc6.css",
-    "main.js": "/venia/static/js/main.02a275a9.js",
+    "main.css": "/venia/static/css/main.59edc97a.css",
+    "main.js": "/venia/static/js/main.54b20f4a.js",
     "static/js/787.f3f26a24.chunk.js": "/venia/static/js/787.f3f26a24.chunk.js",
     "static/media/hero-banner.png": "/venia/static/media/hero-banner.3764437ecc51d194eece.png",
+    "static/media/PP_BTN@2x.png": "/venia/static/media/PP_BTN@2x.6383a0b25b4224c45f65.png",
     "static/media/Swatch01@2x.png": "/venia/static/media/Swatch01@2x.30a9f6ab739e8cb18618.png",
     "static/media/slack.svg": "/venia/static/media/slack.c960e95535cd9b3149ccf0f0830ec002.svg",
     "index.html": "/venia/index.html",
     "static/media/share.svg": "/venia/static/media/share.c9452d8d0a01f15f7b30c66f52b97baa.svg",
     "static/media/trash-2.svg": "/venia/static/media/trash-2.a3e697fde0ae7e80f40a3f3214ef433d.svg",
+    "static/media/hamberger.svg": "/venia/static/media/hamberger.02d085fe48c93935d506c0bba60313e8.svg",
     "static/media/instagram.svg": "/venia/static/media/instagram.098205e681981cff2deaa43da7f8afa7.svg",
     "static/media/feather.svg": "/venia/static/media/feather.b8493c1306b4dd9a5c7a2e14a2095e51.svg",
     "static/media/shopping-bag.svg": "/venia/static/media/shopping-bag.7865a20d4f73677ab5144fd6411a11f8.svg",
@@ -20,12 +22,13 @@
     "static/media/heart.svg": "/venia/static/media/heart.a907ab68d10229f05d705226b23d8bf2.svg",
     "static/media/edit-2.svg": "/venia/static/media/edit-2.d86fb5c57c99ad0d8312adf90283ac77.svg",
     "static/media/facebook.svg": "/venia/static/media/facebook.b5b54c5572636785078aa70b8bdffe26.svg",
-    "main.f0666bc6.css.map": "/venia/static/css/main.f0666bc6.css.map",
-    "main.02a275a9.js.map": "/venia/static/js/main.02a275a9.js.map",
+    "static/media/chevron-down.svg": "/venia/static/media/chevron-down.fadc45040e456e5cea02f3cd047ee412.svg",
+    "main.59edc97a.css.map": "/venia/static/css/main.59edc97a.css.map",
+    "main.54b20f4a.js.map": "/venia/static/js/main.54b20f4a.js.map",
     "787.f3f26a24.chunk.js.map": "/venia/static/js/787.f3f26a24.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0666bc6.css",
-    "static/js/main.02a275a9.js"
+    "static/css/main.59edc97a.css",
+    "static/js/main.54b20f4a.js"
   ]
 }
