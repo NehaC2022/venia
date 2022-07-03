@@ -47,7 +47,7 @@
     text-align: left;
     padding-right: 1.5rem;
     img {
-        width: 100%;
+        width: inherit;
     }
     h6{
         font-size: 20px;
@@ -86,4 +86,44 @@
     border: none;
     margin: 0 2.625rem;
     }
+    .pp-button img{
+        width: 77%;
+        margin-top: 1.5rem;
+    }
 }
+.primary-info{
+    margin:2.5rem 0 4rem;
+}
+.accordion {
+    padding: auto;
+    // background-color: #eee;
+    color: $color-grey-D2;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    transition: 0.4s;
+    background-color: #fff;
+    border: 1px solid $color-grey-N1;
+   
+  }
+  .accordion span
+  {
+    float: right;
+  }
+//   Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) /
+//   .active, .accordion:hover {
+//     background-color: #ccc;
+//   }
+  
+// Style the accordion panel. Note: hidden by default /
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    border: 1px solid black;
+  }

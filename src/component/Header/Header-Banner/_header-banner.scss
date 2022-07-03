@@ -1,38 +1,54 @@
 .hero-banner-image{
     width: 100%;
-    padding: 41px 0px;
-    // padding: 21px 0px;
+    height: 320px;
+    object-fit: fill;
+    
+}
+.header-banner-image{
+    padding: 1rem 0;
 }
 .header-banner-content{
     background-color: $color-grey-D4;
     color: $color-white;
     text-align: center;
-    padding:90px;
+    display: flex;
+    flex-direction: column;
+    height: 352px;
+    justify-content: center;
 }
 .header-banner-content h1{
-    font-size: 48px;   
+    font-size: 48px; 
+    font-weight: normal;
+    font-family: Source Serif Pro; 
 }
 .bar{
     width: 102px;
     height: 8px;
     background-color: $color-primary-band;
-    border: none;
-    margin-top: 32px;
+    margin : 2rem auto 0;
 }
 .heading2{
     visibility: hidden;
 }
-@media screen and (max-width:768px)
-{
-    .header-banner-content{
-        padding: 24px 84px;
+@media (min-width: 320px) and (max-width: 767px){
+    .main-banner {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
     }
-    .hero-banner-image{
-        position: absolute;
-        top: 341px;
-        right: 1px;
+    .header-banner-content{
+        height: 15rem!important;
+        margin: -20% 7% 0;
+        width: 85%!important;
+    }
+    .header-banner-image {
+        padding: 0;
+    }
+    .header-banner-image img{
+        height: 12rem!important;
     }
     .heading2{
         visibility: visible;
     }
 }
+

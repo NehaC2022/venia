@@ -50,23 +50,25 @@
     text-align: right;
     padding-left: 19px;
 }
+.footer-menu a{
+    color: $color-grey-D2;
+}
 
-@media screen and (max-width: 768px) {
-    .lower-footer-logo{
-        display: none;
-    }
-    .lower-footer{
+@media (min-width: 320px) and (max-width: 767px) {
+    .lower-footer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 32px 0 42px;
         text-align: center;
-        padding: 32px 70px;
     }
     .lower-footer ul{
         text-align: center;
     }
-    .footer-menu:nth-of-type(2){
-        order: 1;
-    }
-
-    .lower-footer ul li:first-child{
+     .lower-footer ul li:first-child{
         padding: 0px;
+    }
+    .lower-footer p{
+        margin: 1.5rem 0;
     }
 }

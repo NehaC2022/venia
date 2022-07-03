@@ -2,31 +2,34 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { handleAction } from '../../redux/cartSlice';
 
-export default function ProductItem({ title, price, img, id, description, rating, count,product }) {
+export default function ProductItem({ title, price, img, id, description, rating, count, product }) {
     const dispatch = useDispatch();
-    const addProduct = (product) =>{
-      dispatch(handleAction.addItem({...product}))
-      console.log(product);
+    const addProduct = (product) => {
+        dispatch(handleAction.addItem({ ...product }))
+        console.log(product);
     }
     return (
         <div>
             <div className='aem-Grid aem-Grid--12 product-container'>
-                <div className='aem-GridColumn aem-GridColumn--default--7'>
+                <div className='aem-GridColumn aem-GridColumn--default--7 aem-GridColumn--phone--12 aem-GridColumn--tablet--6'>
                     <div className='aem-Grid aem-Grid--12 product-item' >
-                        <div className='aem-GridColumn aem-GridColumn--default--3 mini-image'>
-                            <img src={img} alt='ProductImage' />
-                            <img src={img} alt='ProductImage' />
-                            <img src={img} alt='ProductImage' />
-                            <img src={img} alt='ProductImage' />
-                            <img src={img} alt='ProductImage' />
+                        <div className='aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--hide aem-GridColumn--tablet--hide mini-image'>
+                            <figure>
+                                <img src={img} alt='ProductImage' />
+                                <img src={img} alt='ProductImage' />
+                                <img src={img} alt='ProductImage' />
+                                <img src={img} alt='ProductImage' />
+                                <img src={img} alt='ProductImage' />
+                            </figure>
                         </div>
-                        <div className='aem-GridColumn aem-GridColumn--default--9 large-image'>
-                            <img src={img} alt='ProductImage' />
+                        <div className='aem-GridColumn aem-GridColumn--default--9 aem-GridColumn--phone--12 aem-GridColumn--tablet--6 large-image'>
+                           <figure>
+                                <img src={img} alt='ProductImage' />
+                            </figure>
                         </div>
                     </div>
-
                 </div>
-                <div className='aem-GridColumn aem-GridColumn--default--5 product-details'>
+                <div className='aem-GridColumn aem-GridColumn--default--5 aem-GridColumn--phone--12 aem-GridColumn--tablet--6 product-details'>
                     <h6>Clothing / Women’s / Outerwear</h6>
                     <h1>{title}</h1>
                     <h4>${price}</h4>
@@ -57,7 +60,7 @@ export default function ProductItem({ title, price, img, id, description, rating
                             <button>-</button>
                         </div>
                     </div>
-                    <button className='cart' onClick={()=>addProduct(product)}>ADD TO CART</button>
+                    <button className='cart' onClick={() => addProduct(product)}>ADD TO CART</button>
                     <div className='social-icon'>
                         <img src={require("./Images/heart.svg").default} alt="HeartImage" />
                         <p>Save</p>
@@ -66,18 +69,18 @@ export default function ProductItem({ title, price, img, id, description, rating
                     </div>
                 </div>
             </div>
-            <div className='aem-Grid aem-Grid--12 product-description'>
+            <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 product-description'>
                 <h1>{title}</h1>
-                <div className='aem-GridColumn aem-GridColumn--default--7'>
+                <div className='aem-GridColumn aem-GridColumn--default--7 aem-GridColumn--phone--12 aem-GridColumn--tablet--12'>
                     <div className='aem-Grid aem-Grid--12'>
                         <h3>Description</h3>
                         <p>{description}</p>
                         <span></span>
                     </div>
                 </div>
-                <div className='aem-GridColumn aem-GridColumn--default--5'>
+                <div className='aem-GridColumn aem-GridColumn--default--5 aem-GridColumn--phone--12 aem-GridColumn--tablet--12'>
                     <h3>Details</h3>
-                    <div className='aem-Grid aem-Grid--12'>
+                    <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 aem-Grid--tablet--12 '>
                         <div className='aem-GridColumn aem-GridColumn--default--6 product-detail-icon'>
                             <div>
                                 <img src={require("./Images/slack.svg").default} alt="SlackImage" />

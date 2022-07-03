@@ -3,8 +3,12 @@
     padding-bottom: 30px;
     text-align: left;
 
+    ul{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
     ul li {
-        display: inline;
         padding-right: 2rem;
 
         a {
@@ -26,7 +30,9 @@
 .nav ul li:last-child {
     padding-right: 0px;
 }
-
+.icon{
+    float: right !important;
+}
 .icon ul:last-child {
     text-align: right;
 }
@@ -46,4 +52,54 @@
 
 .menu {
     text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+    .bottom-line{
+        margin-bottom: 0;
+    }
+    .menu ul{
+        display: none;
+    }
+    .nav.mobile-menu{
+        display: block;
+    }
+    .icon ul li:nth-child(2){
+        display: none;
+    }
+    .icon span{
+        display: none;
+    }
+    .mobile-menu{
+        display: inline-block;
+    }
+    .desktop-logo{
+        display: none;
+    }
+    .mobile-logo{
+        float:right;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px){
+    .icon span{
+        display: none;
+    }
+    .mobile-menu{
+        display: none;
+    }
+    .icon ul li:nth-child(2){
+        display: none;
+    }
+    .mobile-logo{
+        float:right;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1920px){
+    .mobile-menu{
+        display: none;
+    }
+    .mobile-logo{
+        display:none;
+    }
+    
 }

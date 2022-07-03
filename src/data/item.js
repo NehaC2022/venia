@@ -23,28 +23,28 @@ export const List = [
 
 export const FooterList = [
     {
-        id: 0,
+        id: 'FL0',
         heading: 'Account',
         submenu1: 'Sign In',
         submenu2: 'Register',
         submenu3: 'Order Status',
     },
     {
-        id: 1,
+        id: 'FL1',
         heading: 'About Us',
         submenu1: 'Our Story',
         submenu2: 'Careers',
         submenu3: '',
     },
     {
-        id: 2,
+        id: 'FL2',
         heading: 'Help',
         submenu1: 'Contact Us',
         submenu2: 'Order Status',
         submenu3: 'Returns',
     },
     {
-        id: 3,
+        id: 'FL3',
         heading: 'Follow Us!',
         submenu1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
         icon1: Instagram,

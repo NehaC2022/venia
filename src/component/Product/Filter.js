@@ -3,7 +3,7 @@ import FilterColor from './FilterColor'
 
 export default function Filter() {
   return (
-    <>
+    <div className='filter'>
       <div className='filter-category'>
       <p>Attribute</p>
       <input type="checkbox" id="option1" name="" value="Option"/>
@@ -53,6 +53,6 @@ export default function Filter() {
       <input type="checkbox" id="option16" name="" value="Option" className='mb-0'/>
       <label htmlFor="option16"> Option</label><br></br>
       </div>
-    </>
+    </div>
   )
 }
