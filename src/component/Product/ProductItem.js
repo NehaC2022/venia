@@ -75,7 +75,6 @@ export default function ProductItem({ title, price, img, id, description, rating
                     <div className='aem-Grid aem-Grid--12'>
                         <h3>Description</h3>
                         <p>{description}</p>
-                        <span></span>
                     </div>
                 </div>
                 <div className='aem-GridColumn aem-GridColumn--default--5 aem-GridColumn--phone--12 aem-GridColumn--tablet--12'>
@@ -104,6 +103,7 @@ export default function ProductItem({ title, price, img, id, description, rating
                     </div>
 
                 </div>
+                
             </div>
         </div>
     )

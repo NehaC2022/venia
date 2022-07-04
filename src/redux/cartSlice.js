@@ -16,7 +16,15 @@ export const cartSlice = createSlice({
             state.item.push(prod);
         }
         localStorage.setItem("cart",JSON.stringify(state.item));
-    }
+    },
+//     removeItem(state, action) {
+//       const rmItemId = action.payload;
+//       state.item = state.item.filter(item => {
+//                   return item.id !== rmItemId;
+//               })   
+
+//       localStorage.setItem("cart", JSON.stringify(state.item));
+// },
     
   },
 })
@@ -24,3 +32,5 @@ export const cartSlice = createSlice({
 export const handleAction= cartSlice.actions
 
 export default cartSlice.reducer
+
+

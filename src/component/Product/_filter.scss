@@ -71,4 +71,12 @@
     .filter{
         display: none;
     }
+    .filter-icon{
+        display: block;
+    }
+}
+@media (min-width: 1024px){
+    .filter-icon{
+        display: none;
+    }
 }

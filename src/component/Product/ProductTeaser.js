@@ -42,7 +42,7 @@ export default function ProductTeaser() {
               <h6>20 Results</h6>
             </div>
             <div className='aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12'>
-              <select id="cars" name="carlist" form="carform">
+              <select className='price-category'>
                 <option value="price">Price Low to High</option>
               </select>
             </div>

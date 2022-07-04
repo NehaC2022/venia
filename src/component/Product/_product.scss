@@ -230,9 +230,26 @@ select {
         margin-top: 2.5rem;
     }
 }
-
+.filter-icon {
+    text-align: center;
+    p{
+        display: inline;
+    }
+}
 .product-description>div {
     padding-right: 2rem;
+}
+.pagination{
+    display: inline-flex;
+    list-style: none;
+
+    li{
+        padding-right: 1rem;
+        
+        a{
+            color: $color-grey-D2;
+        }
+    }
 }
 
 @media (min-width: 320px) and (max-width: 767px){
@@ -241,12 +258,21 @@ select {
             padding-right: 2rem;
         }
     }
+    .price-category{
+        display:none;
+    }
 
     .product-bar h6 {
         text-align: center;
     }
     .product-container{
         padding: 0;
+    }
+    .filter-icon{
+        padding:1rem;
+        p{
+            padding-left: 0.5rem;
+        }
     }
 
 }

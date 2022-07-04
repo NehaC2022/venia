@@ -4,6 +4,7 @@ import FilterColor from './FilterColor'
 export default function Filter() {
   return (
     <div className='filter'>
+      <h6>Filters</h6>
       <div className='filter-category'>
       <p>Attribute</p>
       <input type="checkbox" id="option1" name="" value="Option"/>

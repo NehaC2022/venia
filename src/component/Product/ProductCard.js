@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function ProductCard({ title, price, img, id,loading}) {
-    if(loading){
+
+export default function ProductCard({ title, price, img, id, loading,data}) {
+    if (loading) {
         <h1>Loading..........</h1>
     }
     return (
+        <>
         <div className='aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--6 aem-GridColumn--tablet--6 product-content'>
             <Link to={`/products/${id}`}>
                 <div className='product-image'>
@@ -18,5 +20,6 @@ export default function ProductCard({ title, price, img, id,loading}) {
                 </div>
             </Link>
         </div>
+</>
     )
 }

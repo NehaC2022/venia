@@ -41,8 +41,6 @@ const Navbar = () => {
                     <NavLink exact to="/cart">
                       <li><a href='.#'><img src={curElm.icon3} alt="Shopping Bag" />{totalCartItem}</a></li>
                     </NavLink>
-                    
-
                   </ul>
                 </div>
               </>
