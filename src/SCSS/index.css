@@ -5632,12 +5632,11 @@ select {
 .mini-image img {
   width: auto;
   height: 120px;
-  border: 1px solid #172026;
 }
 
 .large-image img {
   width: 100%;
-  border: 1px solid #172026;
+  padding-right: 1.5rem;
 }
 
 .product-details {
@@ -5837,6 +5836,9 @@ select {
   .filter-icon p {
     padding-left: 0.5rem;
   }
+  .large-image img {
+    padding-right: 0;
+  }
 }
 
 .filter-content {
@@ -5977,6 +5979,10 @@ select {
 
 .shopping-cart ul img {
   padding-right: 0.5rem;
+}
+
+.cart-info {
+  padding-bottom: 3rem;
 }
 
 .cart-product {

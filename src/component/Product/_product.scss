@@ -70,12 +70,11 @@ select {
 .mini-image img {
     width: auto;
     height: 120px;
-    border: 1px solid $color-grey-D2;
 }
 
 .large-image img {
     width: 100%;
-    border: 1px solid $color-grey-D2;
+    padding-right: 1.5rem;
 }
 
 .product-details {
@@ -273,6 +272,9 @@ select {
         p{
             padding-left: 0.5rem;
         }
+    }
+    .large-image img {
+        padding-right: 0;
     }
 
 }

@@ -1,12 +1,19 @@
 import React from 'react'
-import { useSelector } from 'react-redux/es/exports';
-
-
+import { useSelector, useDispatch } from 'react-redux/es/exports';
+import { handleAction } from '../../redux/cartSlice';
 
 export default function ShoppingCart() {
     const cartData = useSelector((value) =>
         value.cart.item
     );
+    const dispatch = useDispatch();
+    const handleRemoveFromCart = (...product) => {
+        dispatch(handleAction.removeFromCart(product));
+        console.log(product);
+      };
+      const handleDecreaseCart = (product) => {
+        dispatch(handleAction.decreaseCart(product));
+      };
     return (
         <section className='container'>
             <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 shopping-cart container'>
@@ -15,8 +22,12 @@ export default function ShoppingCart() {
                     <button className='underbar'></button>
                 </div>
                 <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12'>
-                    <div className='aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--default--12'>
+                    <div className='aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12 cart-info'>
                         {cartData.map((value) => {
+                            const prodQuantity = value.quantity;
+                            const handleIncrementprod = (value)=>{
+                                dispatch(handleAction.incrementQnt(value))
+                            }
                             return (
                                 <>
 
@@ -36,15 +47,15 @@ export default function ShoppingCart() {
                                         </div>
                                         <div className='aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--12  '>
                                             <div className='cart-btn'>
-                                                <button>+</button>
-                                                <input type="text" id="" name="" className='cart-input' />
-                                                <button>-</button>
+                                                <button onclick={handleIncrementprod}>+</button>
+                                                <input type="text" value={prodQuantity} className='cart-input' />
+                                                <button onclick={handleDecreaseCart}>-</button>
                                             </div>
                                         </div>
                                         <div className='aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--hide'>
                                             <ul>
                                                 <li><a href='/'><img src={require('./Images/edit-2.svg').default} alt='' />Edit item</a></li>
-                                                <li><a href='/'><img src={require('./Images/trash-2.svg').default} alt='' />Remove</a></li>
+                                                <li><a href='/' onClick={handleRemoveFromCart}><img src={require('./Images/trash-2.svg').default} alt=''/>Remove</a></li>
                                                 <li><a href='/'><img src={require('./Images/heart.svg').default} alt='' />Save for later</a></li>
                                             </ul>
                                         </div>

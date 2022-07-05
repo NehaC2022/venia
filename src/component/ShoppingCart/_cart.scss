@@ -42,7 +42,9 @@
             }
         }
 }
-
+.cart-info{
+    padding-bottom: 3rem;
+}
 .cart-product{
     text-align: left;
     padding-right: 1.5rem;
@@ -114,10 +116,7 @@
   {
     float: right;
   }
-//   Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) /
-//   .active, .accordion:hover {
-//     background-color: #ccc;
-//   }
+
   
 // Style the accordion panel. Note: hidden by default /
   .panel {
