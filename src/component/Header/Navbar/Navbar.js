@@ -8,7 +8,6 @@ const Navbar = () => {
     return value.cart.item
   });
   const totalCartItem = cartCounter.length;
-  console.log(totalCartItem);
   return (
     <div className='bottom-line'>
       <nav className="aem-Grid aem-Grid--12 container nav">

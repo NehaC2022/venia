@@ -39,10 +39,11 @@
             }
             img{
                 padding-right: 0.5rem;
+                vertical-align: middle;
             }
         }
 }
-.cart-info{
+.cart-info >div{
     padding-bottom: 3rem;
 }
 .cart-product{
@@ -60,6 +61,10 @@
         font-weight: 400;
     }
     
+}
+.cart-icon button{
+    background-color: $color-white;
+    border: none;
 }
 .pricing-summary{
     border: 1px solid $color-grey-N1;
@@ -121,8 +126,14 @@
 // Style the accordion panel. Note: hidden by default /
   .panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: $color-white;
     display: none;
     overflow: hidden;
     border: 1px solid black;
   }
+
+@media (min-width: 320px) and (max-width: 767px){
+    .shopping-cart h1{
+        font-size:2.25rem;
+    }
+}

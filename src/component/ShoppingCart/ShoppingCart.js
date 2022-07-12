@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from "react";
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { handleAction } from '../../redux/cartSlice';
 
@@ -6,14 +6,11 @@ export default function ShoppingCart() {
     const cartData = useSelector((value) =>
         value.cart.item
     );
+    const productCart = useSelector((state) => state.cart.cartTotalAmount);
     const dispatch = useDispatch();
-    const handleRemoveFromCart = (...product) => {
-        dispatch(handleAction.removeFromCart(product));
-        console.log(product);
-      };
-      const handleDecreaseCart = (product) => {
-        dispatch(handleAction.decreaseCart(product));
-      };
+    useEffect(() => {
+        dispatch(handleAction.getTotals());
+      }, [productCart, dispatch]);
     return (
         <section className='container'>
             <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 shopping-cart container'>
@@ -24,18 +21,14 @@ export default function ShoppingCart() {
                 <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12'>
                     <div className='aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12 cart-info'>
                         {cartData.map((value) => {
-                            const prodQuantity = value.quantity;
-                            const handleIncrementprod = (value)=>{
-                                dispatch(handleAction.incrementQnt(value))
-                            }
                             return (
                                 <>
 
                                     <div className='aem-Grid aem-Grid--12'>
-                                        <div className='aem-GridColumn aem-GridColumn--default--6'>
+                                        <div className='aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12'>
                                             <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 cart-product'>
                                                 <div className='aem-GridColumn aem-GridColumn--default--6'>
-                                                    <img src={value.image} alt='' />
+                                                    <img src={value.image} alt='Product' />
                                                 </div>
                                                 <div className='aem-GridColumn aem-GridColumn--default--6'>
                                                     <h6>{value.title}</h6>
@@ -47,17 +40,26 @@ export default function ShoppingCart() {
                                         </div>
                                         <div className='aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--12  '>
                                             <div className='cart-btn'>
-                                                <button onclick={handleIncrementprod}>+</button>
-                                                <input type="text" value={prodQuantity} className='cart-input' />
-                                                <button onclick={handleDecreaseCart}>-</button>
+                                                <button onClick={()=>{return dispatch(handleAction.decrementQnt(value))}}>-</button>
+                                                <input type="text" value={value.quantity} className='cart-input' />
+                                                <button onClick={()=>{return dispatch(handleAction.incrementQnt(value))}}>+</button>
+                                                
                                             </div>
                                         </div>
-                                        <div className='aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--hide'>
+                                        <div className='aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--hide cart-icon'>
                                             <ul>
-                                                <li><a href='/'><img src={require('./Images/edit-2.svg').default} alt='' />Edit item</a></li>
-                                                <li><a href='/' onClick={handleRemoveFromCart}><img src={require('./Images/trash-2.svg').default} alt=''/>Remove</a></li>
-                                                <li><a href='/'><img src={require('./Images/heart.svg').default} alt='' />Save for later</a></li>
+                                                <li>
+                                                    <button aria-label="edit"><img src={require('./Images/edit-2.svg').default} alt='Edit' />Edit item</button>
+                                                </li>
+                                                <li>
+                                                    <button aria-label="remove" onClick={()=>{return dispatch(handleAction.removeFromCart(value.id))}}><img src={require('./Images/trash-2.svg').default} alt='' />Remove</button>
+                                                </li>
+                                                <li>
+                                                    <button aria-label="Save"><img src={require('./Images/heart.svg').default} alt='Save' />Save for later</button>
+                                                </li>
                                             </ul>
+                                            
+                                            
                                         </div>
                                     </div>
                                 </>
@@ -65,25 +67,8 @@ export default function ShoppingCart() {
 
                             )
                         })}
-                    </div>
-                    <div className='aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12 pricing-summary'>
-                        <h5>Pricing Summary</h5>
-                        <div className='aem-Grid aem-Grid--12'>
-                            <p>Subtotal<span>$ 388.00</span></p>
-                            <p>Coupon<span>- $ 77.60</span></p>
-                            <p>Gift Card<span>- $ 100.00</span></p>
-                            <p>Estimated tax<span>$ 23.28</span></p>
-                            <p>Estimated shipping<span>FREE</span></p>
-                            <h6>Estimated Total<span>$ 233.68</span></h6>
-                            <button><img src={require('./Images/lock.svg').default} alt='' />CHECKOUT</button>
-                            <div className='pp-button'><img src={require('./Images/PP_BTN@2x.png')} alt='pp-button' /></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div className='aem-Grid aem-Grid--12 primary-info'>
-                <div className='aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--hide'>
+                        <div className='aem-Grid aem-Grid--12 primary-info'>
+                <div className='aem-GridColumn aem-GridColumn--default--11 aem-GridColumn--phone--12'>
                     <button className="accordion">Estimate your Shipping <span>shipping to 91001 <img src={require('./Images/chevron-down.svg').default} alt='Chevron' /> </span></button>
                     <div className="panel">
                         <p>Lorem ipsum...</p>
@@ -97,6 +82,23 @@ export default function ShoppingCart() {
                     <button className="accordion">Apply Gift Card </button>
                     <div className="panel">
                         <p>Lorem ipsum...</p>
+                    </div>
+
+                </div>
+            </div>
+                    </div>
+                    <div className='aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12 pricing-summary'>
+                        <h5>Pricing Summary</h5>
+                        <div className='aem-Grid aem-Grid--12'>
+                            <p>Subtotal<span>${productCart}</span></p>
+                            <p>Coupon<span>- $ 77.60</span></p>
+                            <p>Gift Card<span>- $ 100.00</span></p>
+                            <p>Estimated tax<span>$ 23.28</span></p>
+                            <p>Estimated shipping<span>FREE</span></p>
+                            <h6>Estimated Total<span>$ {productCart}</span></h6>
+                            <button><img src={require('./Images/lock.svg').default} alt='' />CHECKOUT</button>
+                            <div className='pp-button'><img src={require('./Images/PP_BTN@2x.png')} alt='pp-button' /></div>
+                        </div>
                     </div>
 
                 </div>

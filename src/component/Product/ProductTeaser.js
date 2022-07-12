@@ -1,35 +1,14 @@
-// import React, {  useEffect,useState } from 'react'
 import Products from './Products';
 import ProductFilter from './ProductFilter';
 
-export default function ProductTeaser() {
-  // const [data, setData] = useState([]);
-  // const fetchData = () => {
-  //   fetch("https://fakestoreapi.com/products")
-  //     .then(response => {
-  //       // setLoading(true);
-  //       return response.json()
-  //     })
-  //     .then(data => {
-  //       setData(data)
-  //     })
-  //   console.log(data)
-  // }
-  // const sortFilter = (e) => {
-  //       console.log(e.target.value);
-  //         fetch("https://fakestoreapi.com/products?sort=desc")
-  //           .then(response => {
-  //             // setLoading(true);
-  //             return response.json()
-  //           })
-  //           .then(data => {
-  //             setData(data)
-  //           })
-  //         console.log(data);
-  // }
-  // useEffect(() => {
-  //   sortFilter()
-  // }, [])
+export default function ProductTeaser(filtercomponent) {
+  const onFilterSelect = (e) => {
+
+    console.log('onFilterSelect', filtercomponent);
+
+    filtercomponent(e.target.value);
+
+  }
   return (
     <section className='product-teaser'>
       <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 container '>
@@ -42,9 +21,10 @@ export default function ProductTeaser() {
               <h6>20 Results</h6>
             </div>
             <div className='aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12'>
-              <select className='price-category'>
-                <option value="price">Price Low to High</option>
-              </select>
+            <select id="dropbox" onChange={onFilterSelect}>
+              <option value="Sort by list">Sort by latest</option>
+              <option value="category">Sort by Price</option>
+            </select>
             </div>
           </div>
           <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12'>

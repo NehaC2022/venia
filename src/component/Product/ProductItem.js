@@ -33,13 +33,13 @@ export default function ProductItem({ title, price, img, id, description, rating
                     <h6>Clothing / Women’s / Outerwear</h6>
                     <h1>{title}</h1>
                     <h4>${price}</h4>
-                    {/* <div>
+                    <div>
                         <img src={require("./Images/star.svg").default} alt="StarImage" />
                         <img src={require("./Images/star.svg").default} alt="StarImage" />
                         <img src={require("./Images/star.svg").default} alt="StarImage" />
                         <img src={require("./Images/star.svg").default} alt="StarImage" />
                         <img src={require("./Images/star.svg").default} alt="StarImage" />
-                    </div> */}
+                    </div>
                     <p className='description'>{description}</p>
                     <div className='product-btn'>
                         <h5>Color</h5>
@@ -55,9 +55,9 @@ export default function ProductItem({ title, price, img, id, description, rating
                         <button>XL</button>
                         <h5>Quantity</h5>
                         <div className='cart-btn'>
-                            <button>+</button>
-                            <input type="text" id="" name="" />
                             <button>-</button>
+                            <input type="text" id="" name="" value="1"/>
+                            <button>+</button>
                         </div>
                     </div>
                     <button className='cart' onClick={() => addProduct(product)}>ADD TO CART</button>

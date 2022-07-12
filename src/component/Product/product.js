@@ -6,9 +6,6 @@ import ProductItem from './ProductItem';
 export default function Product() {
   const [data, setData] = useState([]);
   const { id } = useParams();
-
-  // const getdata = useSelector((state)=> state.cartreducer);
-  // console.log(getdata);
   const fetchData = () => {
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then(response => {

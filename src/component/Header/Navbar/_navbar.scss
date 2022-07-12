@@ -64,20 +64,30 @@
     .nav.mobile-menu{
         display: block;
     }
+    .nav ul li {
+        padding-right: 1rem;
+    }
     .icon ul li:nth-child(2){
         display: none;
     }
     .icon span{
         display: none;
     }
+    .icon ul li img{
+        vertical-align: baseline;
+    }
     .mobile-menu{
         display: inline-block;
+        padding-right: 6rem;
     }
     .desktop-logo{
         display: none;
     }
     .mobile-logo{
         float:right;
+    }
+    .logo{
+        display: flex;
     }
 }
 @media (min-width: 768px) and (max-width: 1023px){
