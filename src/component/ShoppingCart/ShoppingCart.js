@@ -54,9 +54,9 @@ export default function ShoppingCart() {
                                         </div>
                                         <div className='aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--hide'>
                                             <ul>
-                                                <li><a href='/'><img src={require('./Images/edit-2.svg').default} alt='' />Edit item</a></li>
-                                                <li><button onClick={handleRemoveFromCart}><img src={require('./Images/trash-2.svg').default} alt=''/>Remove</button></li>
-                                                <li><a href='/'><img src={require('./Images/heart.svg').default} alt='' />Save for later</a></li>
+                                                <li><a href='/'><img src={require('./Images/edit-2.svg').default} alt='Edit' />Edit item</a></li>
+                                                <li><button onClick={handleRemoveFromCart}><img src={require('./Images/trash-2.svg').default} alt='Remove'/>Remove</button></li>
+                                                <li><a href='/'><img src={require('./Images/heart.svg').default} alt='Save for later' />Save for later</a></li>
                                             </ul>
                                         </div>
                                     </div>
