@@ -5586,7 +5586,7 @@ select {
 }
 
 .cart-btn input {
-  width: 114px;
+  width: 100px;
   height: 40px;
   margin: 0 0.75rem;
   border: 2px solid #91959C;
@@ -5674,6 +5674,7 @@ select {
   display: -ms-inline-flexbox;
   display: inline-flex;
   list-style: none;
+  margin: 0 auto;
 }
 
 .pagination li {

@@ -15,9 +15,9 @@ function FooterItemList() {
                                 <li><a href=".#">{curElm.submenu3}</a></li>
                                 <li>
                                     <a href=".#">
-                                        <img src={curElm.icon1} alt="" />
-                                        <img src={curElm.icon2} alt=""/>
-                                        <img src={curElm.icon3} alt=""/>
+                                        <img src={curElm.icon1} alt="Instagram" />
+                                        <img src={curElm.icon2} alt="Facebook"/>
+                                        <img src={curElm.icon3} alt="Twitter"/>
                                     </a>
                                 </li>
                             </ul>

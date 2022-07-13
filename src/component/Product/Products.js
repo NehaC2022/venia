@@ -1,71 +1,71 @@
-import React, {useState } from 'react';
-// import axios from 'axios';
-// import ProductCard from './ProductCard';
-import Pagination from 'react-js-pagination';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import ProductCard from './ProductCard';
 
 
-const Products = ({data, loading}) => {
-  // const [data, setData] = useState([]);
-  // const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
-  const [cardsPerPage] = useState(9);
-  const lastcardIndex = page * cardsPerPage;
-  const firstcardIndex = lastcardIndex - cardsPerPage;
-  const currentData = data.slice(firstcardIndex, lastcardIndex);
-  const totalcards = data.length;
+const Products = () => {
+  const [data, setData] = useState([]);
+  const [loading, setloading] = useState(false)
+  const fetchData = () => {
+    setloading(true);
+    fetch("https://fakestoreapi.com/products")
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setData(data);
+        setloading(false);
 
-  const paginate = pageNumber => setPage(pageNumber);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     setLoading(true);
-  //     const res = await axios.get('https://fakestoreapi.com/products');
-  //     setData(res.data);
-  //     setLoading(false);
-  //   }
-  //   fetchData()
-  // }, []);
+      })
+    console.log(data)
+  }
+
+
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const [sort, setSort] = useState();
+  const onfilterChange = (filter) => {
+    console.log("onfilter", sort);
+    if (filter) {
+      const result = data.sort((a, b) => a.price - b.price);
+      return setSort(result);
+    }
+    else {
+      const result = data;
+      return setSort(result);
+    }
+  }
+
   return (
-    <>
-      <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 product '>
-        {loading ? <h1 className='loader-heading'>Loading.........</h1>:<>
-        {currentData.map(val => {
-
-          return (
-            // <>
-            //   <ProductCard key={val.id} id={val.id} img={val.image} title={val.title} price={val.price} loading={loading} data={data}/>
-            // </>
-            <>
-        <div className='aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--6 aem-GridColumn--tablet--6 product-content'>
-            <Link to={`/products/${val.id}`}>
-                <div className='product-image'>
-                    <img src={val.image} alt="cardimage" />
-                </div>
-                <div className='product-info'>
-                    <strong className='product-title'>{val.title.substring(0, 26)}</strong>
-                    <p className='product-price'>${val.price}</p>
-                    <img className='fav_icon' src={require("./Images/heart.svg").default} alt="Heartsvgimage" />
-                </div>
-            </Link>
-        </div>
-</>
-          )
 
 
-        })}
-        </>}
-      </div>
-      <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12'>
-        <Pagination
-          activePage={page}
-          itemsCountPerPage={9}
-          totalItemsCount={totalcards}
-          pageRangeDisplayed={5}
-          onChange={paginate}
-        />
-      </div>
-    </>
+    <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 product'>
+      {
+        loading ? <h1 style={{ fontSize: "62px" }}>Loading...</h1> :
+          <>
+
+
+            <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 body-container product-bar'>
+              <div className='aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12'>
+                <p>{data.length}Results</p>
+              </div>
+              <div className='aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12'>
+                <select value onChange={onfilterChange} >
+                  <option>Sort by Latest</option>
+                  <option value="Lowest">low to high</option>
+
+                </select>
+              </div>
+            </div>
+            <ProductCard data={data} loading={loading} />
+
+          </>}
+
+
+    </div>
   )
 }
 
-export default Products;
+export default Products

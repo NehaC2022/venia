@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { handleAction } from '../../redux/cartSlice';
 
-export default function ProductItem({ title, price, img, id, description, rating, count, product }) {
+export default function ProductItem({ title, price, img, description, product }) {
     const dispatch = useDispatch();
     const addProduct = (product) => {
         dispatch(handleAction.addItem({ ...product }))
@@ -23,7 +23,7 @@ export default function ProductItem({ title, price, img, id, description, rating
                             </figure>
                         </div>
                         <div className='aem-GridColumn aem-GridColumn--default--9 aem-GridColumn--phone--12 aem-GridColumn--tablet--6 large-image'>
-                           <figure>
+                            <figure>
                                 <img src={img} alt='ProductImage' />
                             </figure>
                         </div>
@@ -55,9 +55,9 @@ export default function ProductItem({ title, price, img, id, description, rating
                         <button>XL</button>
                         <h5>Quantity</h5>
                         <div className='cart-btn'>
-                            <button>-</button>
-                            <input type="text" id="" name="" value="1"/>
-                            <button>+</button>
+                            <button onClick={() => { return dispatch(handleAction.decrementQnt(product)) }}>-</button>
+                            <input type="text" product={product.quantity} className='cart-input' />
+                            <button onClick={() => { return dispatch(handleAction.incrementQnt(product)) }}>+</button>
                         </div>
                     </div>
                     <button className='cart' onClick={() => addProduct(product)}>ADD TO CART</button>
@@ -103,7 +103,7 @@ export default function ProductItem({ title, price, img, id, description, rating
                     </div>
 
                 </div>
-                
+
             </div>
         </div>
     )

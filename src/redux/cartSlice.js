@@ -13,7 +13,10 @@ export const cartSlice = createSlice({
       const prod = action.payload;
       const exist = state.item.find((val) => val.id === prod.id);
       if (exist) {
-        return state.item.map((val) => val.id === prod.id ? { ...val, quantity: val.quantity + 1 } : val)
+          state.cartItems[exist] = {
+            ...state.item[exist],
+            quantity: state.item[exist].quantity + 1,
+          };
       } else {
         const prod = action.payload;
         state.item.push(prod);
@@ -37,17 +40,6 @@ export const cartSlice = createSlice({
       state.cartTotalAmount += state.item[increment].price;
       localStorage.setItem("cartItems", JSON.stringify(state.item));
     },
-    
-    // decrementQnt(state, action) {
-    //   const decrement = state.item.findIndex(
-    //     (item) => item.id === action.payload.id
-    //   );
-    //   if (state.item[decrement].quantity >= 1) {
-    //     state.item[decrement].quantity -= 1;
-    //   }
-    //   state.cartTotalAmount -= state.item[decrement].price;
-    //   localStorage.setItem("cartItems", JSON.stringify(state.item));
-    // },
     decrementQnt(state, action) {
       const decrement = state.item.findIndex(
         (item) => item.id === action.payload.id
