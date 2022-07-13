@@ -38,14 +38,31 @@ export const cartSlice = createSlice({
       localStorage.setItem("cartItems", JSON.stringify(state.item));
     },
     
+    // decrementQnt(state, action) {
+    //   const decrement = state.item.findIndex(
+    //     (item) => item.id === action.payload.id
+    //   );
+    //   if (state.item[decrement].quantity >= 1) {
+    //     state.item[decrement].quantity -= 1;
+    //   }
+    //   state.cartTotalAmount -= state.item[decrement].price;
+    //   localStorage.setItem("cartItems", JSON.stringify(state.item));
+    // },
     decrementQnt(state, action) {
       const decrement = state.item.findIndex(
         (item) => item.id === action.payload.id
       );
-      if (state.item[decrement].quantity >= 1) {
+
+      if (state.item[decrement].quantity > 1) {
         state.item[decrement].quantity -= 1;
+
+      } else if (state.item[decrement].quantity === 1) {
+        const nextCartItems = state.item.filter(
+          (item) => item.id !== action.payload.id
+        );
+        state.item = nextCartItems;
       }
-      state.cartTotalAmount -= state.item[decrement].price;
+
       localStorage.setItem("cartItems", JSON.stringify(state.item));
     },
     getTotals(state, action) {
