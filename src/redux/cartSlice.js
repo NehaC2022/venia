@@ -11,14 +11,14 @@ export const cartSlice = createSlice({
   reducers: {  
     addItem(state, action) {
       const prod = action.payload;
-      const exist = state.item.find((val) => val.id === prod.id);
-      if (exist) {
+      const exist = state.item.findIndex((val) => val.id === prod.id);
+      if (exist >=0) {
           state.cartItems[exist] = {
             ...state.item[exist],
             quantity: state.item[exist].quantity + 1,
           };
       } else {
-        const prod = action.payload;
+        const prod = {...action.payload, quantity: 1 }
         state.item.push(prod);
       }
       localStorage.setItem("cartItems", JSON.stringify(state.item));
@@ -34,7 +34,7 @@ export const cartSlice = createSlice({
     },
     incrementQnt(state, action) {
       const increment = state.item.findIndex(
-        (item) => item.id === action.payload.id
+        (items) => items.id === action.payload.id
       );
       state.item[increment].quantity += 1;
       state.cartTotalAmount += state.item[increment].price;

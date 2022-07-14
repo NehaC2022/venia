@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import { useDispatch } from 'react-redux';
 import { handleAction } from '../../redux/cartSlice';
 
@@ -7,6 +7,22 @@ export default function ProductItem({ title, price, img, description, product })
     const addProduct = (product) => {
         dispatch(handleAction.addItem({ ...product }))
         console.log(product);
+    }
+    let [num, setNum]= useState(0);
+    let incNum =()=>{
+      if(num<10)
+      {
+      setNum(Number(num)+1);
+      }
+    };
+    let decNum = () => {
+       if(num>0)
+       {
+        setNum(num - 1);
+       }
+    }
+   let handleChange = (e)=>{
+     setNum(e.target.value);
     }
     return (
         <div>
@@ -55,9 +71,9 @@ export default function ProductItem({ title, price, img, description, product })
                         <button>XL</button>
                         <h5>Quantity</h5>
                         <div className='cart-btn'>
-                            <button onClick={() => { return dispatch(handleAction.decrementQnt(product)) }}>-</button>
-                            <input type="text" product={product.quantity} className='cart-input' />
-                            <button onClick={() => { return dispatch(handleAction.incrementQnt(product)) }}>+</button>
+                            <button onClick={decNum}>-</button>
+                            <input type="text" value={num} onChange={handleChange}/>
+                            <button onClick={incNum}>+</button>
                         </div>
                     </div>
                     <button className='cart' onClick={() => addProduct(product)}>ADD TO CART</button>
