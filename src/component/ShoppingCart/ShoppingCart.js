@@ -16,7 +16,7 @@ export default function ShoppingCart() {
             <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 shopping-cart container'>
                 <div>
                     <h1>Your Shopping Bag</h1>
-                    <button className='underbar'></button>
+                    <button className='underbar' aria-label="underbarButton"></button>
                 </div>
                 <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12'>
                     <div className='aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12 cart-info'>
@@ -28,7 +28,7 @@ export default function ShoppingCart() {
                                         <div className='aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12'>
                                             <div className='aem-Grid aem-Grid--12 aem-Grid--phone--12 cart-product'>
                                                 <div className='aem-GridColumn aem-GridColumn--default--6'>
-                                                    <img src={value.image} alt='Product' />
+                                                    <img src={value.image} alt='Product' aria-label="productImage"/>
                                                 </div>
                                                 <div className='aem-GridColumn aem-GridColumn--default--6'>
                                                     <h6>{value.title}</h6>
@@ -40,22 +40,22 @@ export default function ShoppingCart() {
                                         </div>
                                         <div className='aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--12  '>
                                             <div className='cart-btn'>
-                                                <button onClick={()=>{return dispatch(handleAction.decrementQnt(value))}}>-</button>
+                                                <button aria-label="decrement-Button" onClick={()=>{return dispatch(handleAction.decrementQnt(value))}}>-</button>
                                                 <input type="text" value={value.quantity} className='cart-input' />
-                                                <button onClick={()=>{return dispatch(handleAction.incrementQnt(value))}}>+</button>
+                                                <button aria-label="Increment-Button" onClick={()=>{return dispatch(handleAction.incrementQnt(value))}}>+</button>
                                                 
                                             </div>
                                         </div>
                                         <div className='aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--hide cart-icon'>
                                             <ul>
                                                 <li>
-                                                    <button aria-label="edit"><img src={require('./Images/edit-2.svg').default} alt='Edit' />Edit item</button>
+                                                    <button aria-label="edit"><img src={require('./Images/edit-2.svg').default} alt='Edit' aria-label="EditIcon"/>Edit item</button>
                                                 </li>
                                                 <li>
-                                                    <button aria-label="remove" onClick={()=>{return dispatch(handleAction.removeFromCart(value.id))}}><img src={require('./Images/trash-2.svg').default} alt='' />Remove</button>
+                                                    <button aria-label="remove" onClick={()=>{return dispatch(handleAction.removeFromCart(value.id))}}><img src={require('./Images/trash-2.svg').default} alt='Trash' aria-label="TrashIcon"/>Remove</button>
                                                 </li>
                                                 <li>
-                                                    <button aria-label="Save"><img src={require('./Images/heart.svg').default} alt='Save' />Save for later</button>
+                                                    <button aria-label="Save"><img src={require('./Images/heart.svg').default} alt='Save' aria-label="SaveIcon"/>Save for later</button>
                                                 </li>
                                             </ul>
                                             
@@ -69,17 +69,17 @@ export default function ShoppingCart() {
                         })}
                         <div className='aem-Grid aem-Grid--12 primary-info'>
                 <div className='aem-GridColumn aem-GridColumn--default--11 aem-GridColumn--phone--12'>
-                    <button className="accordion">Estimate your Shipping <span>shipping to 91001 <img src={require('./Images/chevron-down.svg').default} alt='Chevron' /> </span></button>
+                    <button className="accordion" aria-label="accordian-button">Estimate your Shipping <span>shipping to 91001 <img src={require('./Images/chevron-down.svg').default} alt='Chevron' aria-label="Chevron-icon"/> </span></button>
                     <div className="panel">
                         <p>Lorem ipsum...</p>
                     </div>
 
-                    <button className="accordion">Enter a Coupon Code<span>20%discount applied <img src={require('./Images/chevron-down.svg').default} alt='Chevron' /></span></button>
+                    <button className="accordion" aria-label="accordian-button">Enter a Coupon Code<span>20%discount applied <img src={require('./Images/chevron-down.svg').default} alt='Chevron' aria-label="Chevron-icon"/></span></button>
                     <div className="panel">
                         <p>Lorem ipsum...</p>
                     </div>
 
-                    <button className="accordion">Apply Gift Card </button>
+                    <button className="accordion" aria-label="accordian-button">Apply Gift Card </button>
                     <div className="panel">
                         <p>Lorem ipsum...</p>
                     </div>
@@ -96,7 +96,7 @@ export default function ShoppingCart() {
                             <p>Estimated tax<span>$ 23.28</span></p>
                             <p>Estimated shipping<span>FREE</span></p>
                             <h6>Estimated Total<span>$ {productCart}</span></h6>
-                            <button><img src={require('./Images/lock.svg').default} alt='' />CHECKOUT</button>
+                            <button><img src={require('./Images/lock.svg').default} alt='Lock' aria-label="LockIcon" />CHECKOUT</button>
                             <div className='pp-button'><img src={require('./Images/PP_BTN@2x.png')} alt='pp-button' /></div>
                         </div>
                     </div>
